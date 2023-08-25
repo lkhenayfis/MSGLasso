@@ -6,7 +6,7 @@
 \description{A function to fit the Multivariate Sparse Group Lasso with an arbitrary group structure using the mixed coordinate descent algorithm.}
 
 \usage{
-MSGLasso(X.m, Y.m, grp.WTs, Pen.L, Pen.G, PQ.grps, GR.grps, grp_Norm0,
+MSGLasso(X.m, Y.m, grp.WTs, Pen_L, Pen_G, PQ.grps, GR.grps, grp_Norm0,
  lam1, lam.G, Beta0 = NULL)
 }
 
@@ -14,8 +14,8 @@ MSGLasso(X.m, Y.m, grp.WTs, Pen.L, Pen.G, PQ.grps, GR.grps, grp_Norm0,
   \item{X.m}{numeric predictor matrix (n by p): columns correspond to predictor variables and rows correspond to samples. Missing values are not allowed.}
   \item{Y.m}{numeric predictor matrix (n by q): columns correspond to response variables and rows correspond to samples. Missing values are not allowed.}
   \item{grp.WTs}{user specified adaptive group weighting matrix of g by r, for putting different penalization levels on different groups. Missing values are not allowed.}
-  \item{Pen.L}{user specified single-entry level penalization indictor mateix of p by q. 1 for being penalized and 0 for not. Missing values are not allowed.}
-  \item{Pen.G}{user specified group level penalization indictor mateix of g by r. 1 for being penalized and 0 for not. Missing values are not allowed.}
+  \item{Pen_L}{user specified single-entry level penalization indictor mateix of p by q. 1 for being penalized and 0 for not. Missing values are not allowed.}
+  \item{Pen_G}{user specified group level penalization indictor mateix of g by r. 1 for being penalized and 0 for not. Missing values are not allowed.}
   \item{PQ.grps}{the group attributing matrix of (p+q) by (gmax+1), where gmax is max number of different groups a single variable belongs to. Each row corresponds to a (predictor or response) varaible, and starts with group indexes the variable belongs to and followed by 999.}
   \item{GR.grps}{the variable attributing matrix of (g+r)*(cmax+1), where cmax is max number of variables a single group contains. Each row corresponds to a (predictor or response) group, and starts with variable indexes the group contains to and followed by 999.}
   \item{grp_Norm0}{a numeric matrix (g by r) containing starting L2 group norm values. Should be calculated from the Beta starting value matrix Beta0.}

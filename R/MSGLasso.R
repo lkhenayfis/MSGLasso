@@ -1,5 +1,5 @@
 MSGLasso <-
-function(X.m, Y.m, grp.WTs, Pen.L, Pen.G, PQ.grps, GR.grps, grp_Norm0, lam1, lam.G, Beta0=NULL)
+function(X.m, Y.m, grp.WTs, Pen_L, Pen_G, PQ.grps, GR.grps, grp_Norm0, lam1, lam.G, Beta0=NULL)
 {
 ##########################################################
 
@@ -28,12 +28,12 @@ function(X.m, Y.m, grp.WTs, Pen.L, Pen.G, PQ.grps, GR.grps, grp_Norm0, lam1, lam
   }
 
   if(!is.null(ncol(Pen_L))){
-   Pen_L =as.vector(t(Pen.L))} else{
-   Pen_L =as.vector(Pen.L)
+   Pen_L =as.vector(t(Pen_L))} else{
+   Pen_L =as.vector(Pen_L)
   }
   if(!is.null(ncol(Pen_G))){
-   Pen_G =as.vector(t(Pen.G))} else{
-   Pen_G =as.vector(Pen.G)   
+   Pen_G =as.vector(t(Pen_G))} else{
+   Pen_G =as.vector(Pen_G)   
   }
 
   gmax=ncol(PQ.grps)

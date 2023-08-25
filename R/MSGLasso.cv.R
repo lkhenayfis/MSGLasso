@@ -1,12 +1,12 @@
 MSGLasso.cv <-
-function(X, Y, grpWTs, Pen.L, Pen.G, PQgrps, GRgrps, lam1.v, lamG.v, fold=10, seed=1, Beta.ini=NULL, grp_Norm=NULL)
+function(X, Y, grpWTs, Pen_L, Pen_G, PQgrps, GRgrps, lam1.v, lamG.v, fold=10, seed=1, Beta.ini=NULL, grp_Norm=NULL)
 {
 
   n=nrow(X)
   p=ncol(X)
   q=ncol(Y)
-  G=nrow(Pen.G)
-  R=ncol(Pen.G)
+  G=nrow(Pen_G)
+  R=ncol(Pen_G)
 
  ###### sort penalty parameter from large to small
  k1=length(lam1.v) 
@@ -65,7 +65,7 @@ function(X, Y, grpWTs, Pen.L, Pen.G, PQgrps, GRgrps, lam1.v, lamG.v, fold=10, se
 	  lam1=cur.lam1
 	  lam_G=matrix(rep(cur.lam3, G*R),G,R,byrow=T)
 
-          temp=MSGLasso(X.m, Y.m, grpWTs, Pen.L, Pen.G, PQgrps, GRgrps, grp_Norm0, lam1, lam_G, Beta0=Beta.old)   
+          temp=MSGLasso(X.m, Y.m, grpWTs, Pen_L, Pen_G, PQgrps, GRgrps, grp_Norm0, lam1, lam_G, Beta0=Beta.old)   
            
           lams.c[[(j-1)*k1+i]]<-list(lam1=cur.lam1, lam3=cur.lam3) #, phi=temp$Beta#
           Beta.old <-temp$Beta

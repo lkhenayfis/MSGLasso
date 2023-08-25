@@ -6,7 +6,7 @@
 \description{Fit the MSGLasso for a series sets of tuning parameters and use the k-fold cross validation to select the optimal tunning parameter set.}
 
 \usage{
-MSGLasso.cv(X, Y, grpWTs, Pen.L, Pen.G, PQgrps, GRgrps, lam1.v, lamG.v, 
+MSGLasso.cv(X, Y, grpWTs, Pen_L, Pen_G, PQgrps, GRgrps, lam1.v, lamG.v, 
    fold = 10, seed = 1, Beta.ini = NULL, grp_Norm = NULL)
 }
 
@@ -14,8 +14,8 @@ MSGLasso.cv(X, Y, grpWTs, Pen.L, Pen.G, PQgrps, GRgrps, lam1.v, lamG.v,
   \item{X}{numeric predictor matrix (n by p): columns correspond to predictor variables and rows correspond to samples. Missing values are not allowed.}
   \item{Y}{numeric predictor matrix (n by q): columns correspond to response variables and rows correspond to samples. Missing values are not allowed.}
   \item{grpWTs}{user specified adaptive group weighting matrix of g by r, for putting different penalization levels on different groups. Missing values are not allowed.}
-  \item{Pen.L}{user specified single-entry level penalization indictor mateix of p by q. 1 for being penalized and 0 for not. Missing values are not allowed.}
-  \item{Pen.G}{user specified group level penalization indictor mateix of g by r. 1 for being penalized and 0 for not. Missing values are not allowed.}
+  \item{Pen_L}{user specified single-entry level penalization indictor mateix of p by q. 1 for being penalized and 0 for not. Missing values are not allowed.}
+  \item{Pen_G}{user specified group level penalization indictor mateix of g by r. 1 for being penalized and 0 for not. Missing values are not allowed.}
   \item{PQgrps}{the group attributing matrix of (p+q) by (gmax+1), where gmax is max number of different groups a single variable belongs to. Each row corresponds to a (predictor or response) varaible, and starts with group indexes the variable belongs to and followed by 999.}
   \item{GRgrps}{the variable attributing matrix of (g+r)*(cmax+1), where cmax is max number of variables a single group contains. Each row corresponds to a (predictor or response) group, and starts with variable indexes the group contains to and followed by 999.}
   \item{lam1.v}{lasso panelty parameter scaler.}
